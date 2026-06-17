@@ -1,0 +1,22 @@
+name: Playwright Docker CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  run-tests:
+    name: Build and Run Playwright Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build Docker Image
+        run: docker build -t playwright-lab:latest .
+
+      - name: Run Playwright Tests inside Docker
+        run: docker run --rm playwright-lab:latest

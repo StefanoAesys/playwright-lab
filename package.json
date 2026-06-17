@@ -1,0 +1,10 @@
+{
+  "name": "playwright-lab",
+  "version": "1.0.0",
+  "description": "Playwright Automation Lab",
+  "main": "index.js",
+  "type": "commonjs",
+  "dependencies": {
+    "@playwright/test": "1.60.0"
+  }
+}
